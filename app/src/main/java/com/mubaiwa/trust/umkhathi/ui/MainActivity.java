@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
         final double latitude = -17.8333;
         final double longitude = 31.0500;
-        //20.1700, 28.5800
+        //final 20.1700, 28.5800
         // Bulawayo -17.8333,31.0500
 
         mRefreshImageView.setOnClickListener(new View.OnClickListener() {
