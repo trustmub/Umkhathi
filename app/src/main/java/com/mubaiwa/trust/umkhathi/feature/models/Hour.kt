@@ -1,4 +1,4 @@
-package com.mubaiwa.trust.umkhathi.Weather
+package com.mubaiwa.trust.umkhathi.feature.models
 
 /**
  * Created by trust on 2016/02/01.

@@ -1,6 +1,7 @@
 package com.mubaiwa.trust.umkhathi.Weather
 
 import com.mubaiwa.trust.umkhathi.R
+import com.mubaiwa.trust.umkhathi.feature.models.Hour
 import com.mubaiwa.trust.umkhathi.ui.Current
 
 /**
@@ -14,26 +15,37 @@ class Forecast {
     companion object {
         fun getIconId(iconString: String): Int {
             var iconId = R.mipmap.clear_day
-            if (iconString == "clear-day") {
-                iconId = R.mipmap.clear_day
-            } else if (iconString == "clear-night") {
-                iconId = R.mipmap.clear_night
-            } else if (iconString == "rain") {
-                iconId = R.mipmap.rain
-            } else if (iconString == "snow") {
-                iconId = R.mipmap.snow
-            } else if (iconString == "sleet") {
-                iconId = R.mipmap.sleet
-            } else if (iconString == "wind") {
-                iconId = R.mipmap.wind
-            } else if (iconString == "fog") {
-                iconId = R.mipmap.fog
-            } else if (iconString == "cloudy") {
-                iconId = R.mipmap.cloudy
-            } else if (iconString == "partly-cloudy-day") {
-                iconId = R.mipmap.partly_cloudy
-            } else if (iconString == "partly-cloudy-night") {
-                iconId = R.mipmap.cloudy_night
+            when (iconString) {
+                "clear-day" -> {
+                    iconId = R.mipmap.clear_day
+                }
+                "clear-night" -> {
+                    iconId = R.mipmap.clear_night
+                }
+                "rain" -> {
+                    iconId = R.mipmap.rain
+                }
+                "snow" -> {
+                    iconId = R.mipmap.snow
+                }
+                "sleet" -> {
+                    iconId = R.mipmap.sleet
+                }
+                "wind" -> {
+                    iconId = R.mipmap.wind
+                }
+                "fog" -> {
+                    iconId = R.mipmap.fog
+                }
+                "cloudy" -> {
+                    iconId = R.mipmap.cloudy
+                }
+                "partly-cloudy-day" -> {
+                    iconId = R.mipmap.partly_cloudy
+                }
+                "partly-cloudy-night" -> {
+                    iconId = R.mipmap.cloudy_night
+                }
             }
             return iconId
         }

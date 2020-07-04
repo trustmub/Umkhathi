@@ -18,7 +18,7 @@ import android.widget.Toast;
 import com.mubaiwa.trust.umkhathi.R;
 import com.mubaiwa.trust.umkhathi.Weather.Day;
 import com.mubaiwa.trust.umkhathi.Weather.Forecast;
-import com.mubaiwa.trust.umkhathi.Weather.Hour;
+import com.mubaiwa.trust.umkhathi.feature.models.Hour;
 import com.squareup.okhttp.Call;
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.OkHttpClient;
