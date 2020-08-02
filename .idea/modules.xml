@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/StudioProjects-Umkhathi.iml" filepath="$PROJECT_DIR$/.idea/modules/StudioProjects-Umkhathi.iml" group="Umkhathi" />
       <module fileurl="file://$PROJECT_DIR$/Umkhathi.iml" filepath="$PROJECT_DIR$/Umkhathi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Umkhathi-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Umkhathi-app.iml" group="Umkhathi/app" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
