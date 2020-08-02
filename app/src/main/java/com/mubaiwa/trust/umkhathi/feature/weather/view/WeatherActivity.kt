@@ -1,12 +1,19 @@
 package com.mubaiwa.trust.umkhathi.feature.weather.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.mubaiwa.trust.umkhathi.R
+import androidx.appcompat.app.AppCompatActivity
+import com.mubaiwa.trust.umkhathi.databinding.ActivityWeatherBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+
+@AndroidEntryPoint
 class WeatherActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityWeatherBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_weather)
+        binding = ActivityWeatherBinding.inflate(layoutInflater)
+        setContentView(binding.root)
     }
 }

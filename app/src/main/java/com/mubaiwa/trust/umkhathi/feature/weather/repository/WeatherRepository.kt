@@ -1,7 +1,43 @@
 package com.mubaiwa.trust.umkhathi.feature.weather.repository
 
+import com.mubaiwa.trust.umkhathi.feature.weather.models.WeatherResponseEntity
+import com.mubaiwa.trust.umkhathi.feature.weather.util.CurrentMapper
+import com.mubaiwa.trust.umkhathi.feature.weather.util.DataState
+import com.mubaiwa.trust.umkhathi.feature.weather.util.DayMapper
+import com.mubaiwa.trust.umkhathi.feature.weather.util.HourMapper
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
+import java.lang.Exception
 
-class WeatherRepository {
+
+class WeatherRepository constructor(
+        val service: IWeather,
+        val currentMapper: CurrentMapper,
+        val dailyMapper: DayMapper,
+        val hourlyMapper: HourMapper) : IWeather {
+
+    override fun fetchWeather(): WeatherResponseEntity? {
+        return try {
+            service.fetchWeather()
+        } catch (e: Exception) {
+            throw e
+        }
+    }
+
+    fun getWeather(): Flow<DataState<WeatherResponseEntity>> = flow {
+        emit(DataState.Loading)
+        try {
+            val result = fetchWeather()
+            if (result != null) {
+                currentMapper.setTimeZone(result.timezone)
+                val currentWeather = currentMapper.mapFromEntity(result.currently)
+                val dailyWeather = dailyMapper.mapEntityList(result)
+                val hourlyWeather = hourlyMapper.mapEntityList(result)
+            }
+        } catch (e: Exception) {
+            emit(DataState.NetworkError(e))
+        }
+    }
 
 //    private const val TAG = MainActivity::class.java.simpleName
 //

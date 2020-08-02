@@ -1,7 +1,7 @@
 package com.mubaiwa.trust.umkhathi.Weather
 
 import com.mubaiwa.trust.umkhathi.R
-import com.mubaiwa.trust.umkhathi.feature.models.Hour
+import com.mubaiwa.trust.umkhathi.feature.weather.models.Hour
 import com.mubaiwa.trust.umkhathi.ui.Current
 
 /**

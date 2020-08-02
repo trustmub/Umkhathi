@@ -1,8 +1,13 @@
 package com.mubaiwa.trust.umkhathi.feature.weather.viewmodel
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
+import androidx.hilt.lifecycle.ViewModelInject
+import androidx.lifecycle.ViewModel
+import com.mubaiwa.trust.umkhathi.common.utils.LocationInfo
 
-class HomeViewModel(val app: Application) : AndroidViewModel(app) {
+class HomeViewModel @ViewModelInject constructor( private val locationInfo: LocationInfo) : ViewModel() {
+
+    fun requestDeviceLocation() {
+        locationInfo.requestLocation()
+    }
 
 }

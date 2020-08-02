@@ -1,6 +1,6 @@
-package com.mubaiwa.trust.umkhathi.feature.models
+package com.mubaiwa.trust.umkhathi.feature.weather.models
 
-data class Current(
+data class CurrentModel(
         var icon: String? = null,
         var time: Long = 0,
         var temperature: Double = 0.0,

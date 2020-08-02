@@ -15,7 +15,8 @@ import com.google.android.material.snackbar.Snackbar;
 import com.mubaiwa.trust.umkhathi.R;
 import com.mubaiwa.trust.umkhathi.Weather.Day;
 import com.mubaiwa.trust.umkhathi.Weather.Forecast;
-import com.mubaiwa.trust.umkhathi.feature.models.Hour;
+import com.mubaiwa.trust.umkhathi.feature.weather.models.HourModel;
+
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -178,7 +179,7 @@ public class MainActivity extends AppCompatActivity {
         Forecast forecast = new Forecast();
 
         forecast.setCurrent(getCurrentDetails(jsonData));
-        forecast.setHourlForecast(getHourlyForecast(jsonData));
+//        forecast.setHourlForecast(getHourlyForecast(jsonData));
         forecast.setDailyForecast(getDailyForecast(jsonData));
 
         return forecast;
@@ -210,18 +211,18 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private Hour[] getHourlyForecast(String jsonData) throws JSONException {
+    private HourModel[] getHourlyForecast(String jsonData) throws JSONException {
         JSONObject forecast = new JSONObject(jsonData);
         String timezone = forecast.getString("timezone");
         JSONObject hourly = forecast.getJSONObject("hourly");
         JSONArray data = hourly.getJSONArray("data");
         //Log.i(TAG, "From JSON: " + hourly);
 
-        Hour[] hours = new Hour[data.length()];
+        HourModel[] hours = new HourModel[data.length()];
 
         for (int i = 0; i < data.length(); i++) {
             JSONObject jsonHour = data.getJSONObject(i);
-            Hour hour = new Hour();
+            HourModel hour = new HourModel();
 
             hour.setSummary(jsonHour.getString("summary"));
             hour.setTemperature(jsonHour.getDouble("temperature"));

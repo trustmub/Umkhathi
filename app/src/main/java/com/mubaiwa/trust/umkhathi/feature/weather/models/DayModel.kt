@@ -1,7 +1,7 @@
-package com.mubaiwa.trust.umkhathi.feature.models
+package com.mubaiwa.trust.umkhathi.feature.weather.models
 
-data class Day(
-        var time: Long = 0,
+data class DayModel(
+        var time: Long? = 0,
         var summary: String? = null,
         var temperatureMax: Double = 0.0,
         var icon: String? = null,
